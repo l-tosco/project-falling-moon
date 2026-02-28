@@ -1,3 +1,5 @@
+## Isso aqui é tudo prova de conceito, mudarei depois a estrutura
+
 extends Node2D
 
 var isDragging: bool = false

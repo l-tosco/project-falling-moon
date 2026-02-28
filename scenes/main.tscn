@@ -41,7 +41,7 @@ texture = ExtResource("1_o5qli")
 shape = SubResource("RectangleShape2D_tbgi4")
 
 [node name="unit" type="Node2D" parent="."]
-position = Vector2(390, 133)
+position = Vector2(478, 141)
 script = ExtResource("1_0wfyh")
 
 [node name="Sprite2D" type="Sprite2D" parent="unit"]
@@ -51,6 +51,15 @@ texture = ExtResource("1_o5qli")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unit/unitArea"]
 shape = SubResource("RectangleShape2D_sugp2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 851.0
+offset_top = 29.0
+offset_right = 1354.0
+offset_bottom = 104.0
+text = "PROVA DE CONCEITO MALUCA
+Intenção principal: mover peças de um lugar para o outro.
+Também aprender conceitos básicos de GDScript/Godot no geral."
 
 [connection signal="area_entered" from="unit/unitArea" to="unit" method="_on_unit_area_area_entered"]
 [connection signal="area_exited" from="unit/unitArea" to="unit" method="_on_unit_area_area_exited"]
