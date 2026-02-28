@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://5qy3mi1odig"]
+
+[ext_resource type="Script" uid="uid://cgt5lfvm2a45r" path="res://scripts/unit.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://db0y7k2xx3fa6" path="res://icon.svg" id="1_o5qli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(617, 372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(407.75, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(128, 128)
+
+[node name="main" type="Node2D"]
+
+[node name="map1" type="Node2D" parent="."]
+position = Vector2(390, 468)
+
+[node name="Sprite2D" type="Sprite2D" parent="map1"]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(4.835937, 2.9140623)
+texture = ExtResource("1_o5qli")
+
+[node name="areaMap1" type="Area2D" parent="map1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map1/areaMap1"]
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="map2" type="Node2D" parent="."]
+position = Vector2(914, 470)
+
+[node name="Sprite2D" type="Sprite2D" parent="map2"]
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(3.1875, 2.40625)
+texture = ExtResource("1_o5qli")
+
+[node name="areaMap2" type="Area2D" parent="map2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map2/areaMap2"]
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="unit" type="Node2D" parent="."]
+position = Vector2(390, 133)
+script = ExtResource("1_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="unit"]
+texture = ExtResource("1_o5qli")
+
+[node name="unitArea" type="Area2D" parent="unit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unit/unitArea"]
+shape = SubResource("RectangleShape2D_sugp2")
+
+[connection signal="area_entered" from="unit/unitArea" to="unit" method="_on_unit_area_area_entered"]
+[connection signal="area_exited" from="unit/unitArea" to="unit" method="_on_unit_area_area_exited"]
+[connection signal="input_event" from="unit/unitArea" to="unit" method="_on_unit_area_input_event"]
