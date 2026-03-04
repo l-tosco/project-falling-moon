@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dc3vilsxe2rrq" path="res://scripts/maps.gd" id="1_0wcw4"]
 
-[node name="map" type="Node2D"]
+[node name="map" type="Node2D" node_paths=PackedStringArray("unitSlots")]
 script = ExtResource("1_0wcw4")
+unitSlots = [NodePath("Slot1"), NodePath("Slot2")]
 
 [node name="mapSprite" type="Sprite2D" parent="."]
 
 [node name="areaMap" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="mapCollision" type="CollisionShape2D" parent="areaMap"]
+
+[node name="Slot1" type="Marker2D" parent="."]
+
+[node name="Slot2" type="Marker2D" parent="."]

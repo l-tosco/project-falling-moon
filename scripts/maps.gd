@@ -1,4 +1,3 @@
 extends Node2D
 
-func _ready() -> void:
-	print(name, " bora")
+@export var unitSlots: Array[Marker2D] = []

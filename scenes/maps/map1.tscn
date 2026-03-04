@@ -17,3 +17,9 @@ texture = ExtResource("2_f488b")
 
 [node name="mapCollision" parent="areaMap" index="0"]
 shape = SubResource("RectangleShape2D_3ti6u")
+
+[node name="Slot1" parent="." index="2"]
+position = Vector2(-172, -80)
+
+[node name="Slot2" parent="." index="3"]
+position = Vector2(174, 85)

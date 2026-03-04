@@ -4,17 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://db0y7k2xx3fa6" path="res://icon.svg" id="2_45gdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(128, 128)
+size = Vector2(56, 51)
 
 [node name="unit" type="Node2D"]
 script = ExtResource("1_el003")
 
 [node name="unitSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4453125, 0.3984375)
 texture = ExtResource("2_45gdx")
 
 [node name="unitArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="unitCollision" type="CollisionShape2D" parent="unitArea"]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_sugp2")
 
 [connection signal="area_entered" from="unitArea" to="." method="_on_unit_area_area_entered"]
