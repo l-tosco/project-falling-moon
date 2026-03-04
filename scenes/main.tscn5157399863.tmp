@@ -13,16 +13,16 @@ script = ExtResource("1_sugp2")
 [node name="map" parent="." instance=ExtResource("2_jyhfs")]
 position = Vector2(390, 468)
 
-[node name="map1" parent="." instance=ExtResource("7_tipki")]
-position = Vector2(342, 490)
-script = null
-
-[node name="map2" parent="." instance=ExtResource("6_o6xl0")]
-position = Vector2(930, 516)
-script = null
-
 [node name="unit" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(484, 168)
+
+[node name="map1" parent="." instance=ExtResource("6_o6xl0")]
+position = Vector2(649, 488)
+script = null
+
+[node name="map2" parent="." instance=ExtResource("7_tipki")]
+position = Vector2(168, 396)
+script = null
 
 [node name="button1" type="Control" parent="."]
 layout_mode = 3

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://blu5oeey1impo"]
+
+[ext_resource type="PackedScene" uid="uid://cae8edl3tue54" path="res://scenes/map_scene.tscn" id="1_g2u6i"]
+[ext_resource type="Texture2D" uid="uid://db0y7k2xx3fa6" path="res://icon.svg" id="2_33h1h"]
+[ext_resource type="Script" uid="uid://emugy6hpojk4" path="res://scripts/map_scripts/map_2.gd" id="2_m0brp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0brp"]
+size = Vector2(559, 132.5)
+
+[node name="map" instance=ExtResource("1_g2u6i")]
+script = ExtResource("2_m0brp")
+
+[node name="mapSprite" parent="." index="0"]
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(4.3671875, 1.03125)
+texture = ExtResource("2_33h1h")
+
+[node name="mapCollision" parent="areaMap" index="0"]
+shape = SubResource("RectangleShape2D_m0brp")

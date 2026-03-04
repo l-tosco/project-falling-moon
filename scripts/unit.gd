@@ -6,20 +6,27 @@ var isDragging: bool = false
 var mouseOffset: Vector2 = Vector2.ZERO
 var actualMap = null
 
-func _process(delta):
+func _ready() -> void:
+	pass 
+
+func _process(_delta: float) -> void:
 	if isDragging == true:
 		global_position = get_global_mouse_position() + mouseOffset
 
-func _on_unit_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_unit_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			isDragging = true
-			mouseOffset = global_position - get_global_mouse_position()
-			print("pegou")
+			if manager.movementPhase == true:
+				isDragging = true
+				mouseOffset = global_position - get_global_mouse_position()
+				print("pegou")
+			else:
+				print("espera caralho")
 
 func _on_unit_area_area_entered(area: Area2D) -> void:
 	actualMap = area
-	print("entrou em: ", area.name)
+	var actualMapName = area.get_parent()
+	print("entrou em: ", actualMapName.name)
 
 func _on_unit_area_area_exited(area: Area2D) -> void:
 	if actualMap == area:

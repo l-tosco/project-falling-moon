@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://5qy3mi1odig"]
+[gd_scene load_steps=8 format=3 uid="uid://5qy3mi1odig"]
 
 [ext_resource type="Script" uid="uid://d3s8ns86h2ow7" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b4s4ow160tkl6" path="res://scenes/unit_scene.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cae8edl3tue54" path="res://scenes/map_scene.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://dc3vilsxe2rrq" path="res://scripts/maps.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://dh81xli1sf7ci" path="res://scenes/buttonUI.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://blu5oeey1impo" path="res://scenes/maps/map2.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://1ju2inyoeh7q" path="res://scenes/maps/map1.tscn" id="7_tipki"]
@@ -12,17 +13,16 @@ script = ExtResource("1_sugp2")
 
 [node name="map" parent="." instance=ExtResource("2_jyhfs")]
 position = Vector2(390, 468)
-
-[node name="map1" parent="." instance=ExtResource("7_tipki")]
-position = Vector2(342, 490)
-script = null
-
-[node name="map2" parent="." instance=ExtResource("6_o6xl0")]
-position = Vector2(930, 516)
-script = null
+script = ExtResource("3_tbgi4")
 
 [node name="unit" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(484, 168)
+
+[node name="map1" parent="." instance=ExtResource("6_o6xl0")]
+position = Vector2(649, 488)
+
+[node name="map2" parent="." instance=ExtResource("7_tipki")]
+position = Vector2(168, 396)
 
 [node name="button1" type="Control" parent="."]
 layout_mode = 3

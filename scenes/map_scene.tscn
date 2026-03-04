@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cae8edl3tue54"]
+
+[ext_resource type="Script" uid="uid://dc3vilsxe2rrq" path="res://scripts/maps.gd" id="1_0wcw4"]
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_0wcw4")
+
+[node name="mapSprite" type="Sprite2D" parent="."]
+
+[node name="areaMap" type="Area2D" parent="."]
+
+[node name="mapCollision" type="CollisionShape2D" parent="areaMap"]
